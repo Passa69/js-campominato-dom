@@ -22,7 +22,10 @@ const squareContainer = document.getElementById("container");
 let levels;
 
 // array vuoto per i 16 numeri casuali
-let number = [];
+let numberArray = [];
+console.log(numberArray);
+
+let number = numberArray.slice(0);
 console.log(number);
 
 if (userChoice == 1) {
@@ -40,6 +43,10 @@ if (userChoice == 3) {
 
 }
 
+//  ciclo per numeri casuali array
+for (i = 1; i <= 16; i++) {
+    numberArray.push(Math.floor(Math.random() * levels) + 1);    
+}
 
 // ciclo per la ripetizione degli square
 for (let i = 1; i <= levels; i++) {
@@ -48,19 +55,20 @@ for (let i = 1; i <= levels; i++) {
     square.append(i);
     squareContainer.append(square);
     
-    
+
     // aggiunta click
-    square.addEventListener ('click', function() {
-        console.log('hai cliccato!', this)
-        square.classList.add("selection");
-    });
-
-    
+    if (number = i) {
+        square.addEventListener ('click', function() {
+            console.log('hai cliccato!', this)
+            square.classList.add("boom");
+        });
+    } else if (number != i) {
+        square.addEventListener ('click', function() {
+            console.log('hai cliccato!', this)
+            square.classList.add("selection");
+        });
+    }
     
 }
 
-//  ciclo per numeri casuali array
-for (i = 1; i <= 16; i++) {
-    number.push(Math.floor(Math.random() * levels) + 1);    
-}
 
