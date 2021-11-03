@@ -4,7 +4,7 @@
     // 2.1 creo un ciclo per ogni scelta => for
 // 3. l'utente deve essere in grado di selezionare le celle per rendere selezionate => click + classList
 // ...SECONDA PARTE
-// 4. generare 16 numeri casuali, già esistenti, e dare loro la classe "boom"
+// 4. selezionare 16 numeri casuali, già esistenti negli square, e dare loro la classe "boom"
 // 5. tenere il conto del numero dei quadrati cliccati
 // 6. game over
     // 6.1 se si clicca su una bomba, mostrare tutte le altre
@@ -19,41 +19,49 @@ const squareContainer = document.getElementById("container");
 
 // variabile per layout di scelta dell'utente
 let levels;
+
+// array vuoto per i 16 numeri casuali
 let number = [];
 
 
+
 if (userChoice == 1) {
-    cicleSquare(100);
+    levels = 100;
+
 }
 
 if (userChoice == 2) {
-    cicleSquare(81);
+    levels = 81;
+
 }
 
 if (userChoice == 3) {
-    cicleSquare(49);
+    levels = 49;
+
 }
 
 
 // ciclo per la ripetizione degli square
-function cicleSquare(levels) {
-        
-    for (let i = 1; i <= levels; i++) {
-        let square = document.createElement("div");
-        square.classList.add("square");
-        square.append(i);
-        squareContainer.append(square);
-        
-        
-        // aggiunta click
-        square.addEventListener ('click', function() {
-            console.log('hai cliccato!', this)
-            square.classList.add("selection");
-        });
+    
+for (let i = 1; i <= levels; i++) {
+    let square = document.createElement("div");
+    square.classList.add("square");
+    square.append(i);
+    squareContainer.append(square);
+    
+    
+    // aggiunta click
+    square.addEventListener ('click', function() {
+        console.log('hai cliccato!', this)
+        square.classList.add("selection");
+    });
 
-        
-     
-    }
+    
+    
 }
 
-
+//  ciclo per numeri casuali array
+for (i = 1; i <= 16; i++) {
+    number.push(Math.floor(Math.random() * levels) + 1);    
+}
+console.log(number);
