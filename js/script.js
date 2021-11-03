@@ -57,23 +57,26 @@ for (let i = 1; i <= levels; i++) {
     square.classList.add("square");
     square.append(i);
     squareContainer.append(square);
+
+    // marcatore per game over
+    if (bomba.includes(i)) {
+        square.classList.add('bomb');
+    }
     
     // aggiunta click
-    if (bomba.indexOf(i) == -1) {
-        square.addEventListener ('click', function() {
-            console.log('hai cliccato!', this)
-            square.classList.add("selection");
-        });
-    } else {
-        square.addEventListener ('click', function() {
-            console.log('hai cliccato!', this)
-            square.classList.add("boom");
-        });
-    }
+    square.addEventListener ('click', function() {
+        square.classList.add("selection");
+
+        // mostro tutte le bombe
+        if (bomba.includes(i)) {
+            let bombs = document.getElementsByClassName("bomb");
+            for (let j = 0; j < bombs.length; j++){
+                bombs[j].classList.add("boom");
+            }
+            alert("hai perso!");
+        }
+    });
     
 }
 
-// mostro tutte le bombe
-// if (square.classList.contains(boom)) {
-//     square.classList.add("boom");
-// }
+
