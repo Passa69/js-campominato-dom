@@ -25,8 +25,6 @@ let levels;
 let numberArray = [];
 console.log(numberArray);
 
-let number = numberArray.slice(0);
-console.log(number);
 
 if (userChoice == 1) {
     levels = 100;
