@@ -22,8 +22,8 @@ const squareContainer = document.getElementById("container");
 let levels;
 
 // array vuoto per i 16 numeri casuali
-let numberArray = [];
-console.log(numberArray);
+let bomba = [];
+console.log(bomba);
 
 
 if (userChoice == 1) {
@@ -42,12 +42,12 @@ if (userChoice == 3) {
 }
 
 //  ciclo per numeri casuali array
-for (i = 1; i <= 16; i++) {
+while (bomba.length < 16) {
     let univ = Math.floor(Math.random() * levels) + 1;
 
     // controllo per numeri univoci
-    if (numberArray.indexOf(univ) == -1) { 
-        numberArray.push(univ);
+    if (bomba.indexOf(univ) == -1) { 
+        bomba.push(univ);
     }   
 }
 
@@ -59,7 +59,7 @@ for (let i = 1; i <= levels; i++) {
     squareContainer.append(square);
     
     // aggiunta click
-    if (numberArray.indexOf(i) == -1) {
+    if (bomba.indexOf(i) == -1) {
         square.addEventListener ('click', function() {
             console.log('hai cliccato!', this)
             square.classList.add("selection");
@@ -73,4 +73,7 @@ for (let i = 1; i <= levels; i++) {
     
 }
 
-
+// mostro tutte le bombe
+// if (square.classList.contains(boom)) {
+//     square.classList.add("boom");
+// }
