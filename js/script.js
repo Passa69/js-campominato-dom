@@ -45,7 +45,12 @@ if (userChoice == 3) {
 
 //  ciclo per numeri casuali array
 for (i = 1; i <= 16; i++) {
-    numberArray.push(Math.floor(Math.random() * levels) + 1);    
+    let univ = Math.floor(Math.random() * levels) + 1;
+
+    // controllo per numeri univoci
+    if (numberArray.indexOf(univ) == -1) { 
+        numberArray.push(univ);
+    }   
 }
 
 // ciclo per la ripetizione degli square
@@ -55,19 +60,24 @@ for (let i = 1; i <= levels; i++) {
     square.append(i);
     squareContainer.append(square);
     
-
     // aggiunta click
-    if (number = i) {
-        square.addEventListener ('click', function() {
-            console.log('hai cliccato!', this)
-            square.classList.add("boom");
-        });
-    } else if (number != i) {
-        square.addEventListener ('click', function() {
-            console.log('hai cliccato!', this)
-            square.classList.add("selection");
-        });
-    }
+    square.addEventListener ('click', function() {
+        console.log('hai cliccato!', this)
+        square.classList.add("selection");
+    });
+
+
+    // if (number = i) {
+    //     square.addEventListener ('click', function() {
+    //         console.log('hai cliccato!', this)
+    //         square.classList.add("boom");
+    //     });
+    // } else if (number != i) {
+    //     square.addEventListener ('click', function() {
+    //         console.log('hai cliccato!', this)
+    //         square.classList.add("selection");
+    //     });
+    // }
     
 }
 
