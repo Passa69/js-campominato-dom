@@ -19,6 +19,8 @@ const squareContainer = document.getElementById("container");
 
 // variabile per layout di scelta dell'utente
 let levels;
+let number = [];
+
 
 if (userChoice == 1) {
     cicleSquare(100);
@@ -32,20 +34,26 @@ if (userChoice == 3) {
     cicleSquare(49);
 }
 
+
 // ciclo per la ripetizione degli square
 function cicleSquare(levels) {
-
+        
     for (let i = 1; i <= levels; i++) {
         let square = document.createElement("div");
         square.classList.add("square");
         square.append(i);
         squareContainer.append(square);
-    
+        
+        
         // aggiunta click
         square.addEventListener ('click', function() {
             console.log('hai cliccato!', this)
             square.classList.add("selection");
         });
+
+        
+     
     }
 }
+
 
