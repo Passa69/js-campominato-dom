@@ -61,23 +61,17 @@ for (let i = 1; i <= levels; i++) {
     squareContainer.append(square);
     
     // aggiunta click
-    square.addEventListener ('click', function() {
-        console.log('hai cliccato!', this)
-        square.classList.add("selection");
-    });
-
-
-    // if (number = i) {
-    //     square.addEventListener ('click', function() {
-    //         console.log('hai cliccato!', this)
-    //         square.classList.add("boom");
-    //     });
-    // } else if (number != i) {
-    //     square.addEventListener ('click', function() {
-    //         console.log('hai cliccato!', this)
-    //         square.classList.add("selection");
-    //     });
-    // }
+    if (numberArray.indexOf(i) == -1) {
+        square.addEventListener ('click', function() {
+            console.log('hai cliccato!', this)
+            square.classList.add("selection");
+        });
+    } else {
+        square.addEventListener ('click', function() {
+            console.log('hai cliccato!', this)
+            square.classList.add("boom");
+        });
+    }
     
 }
 
