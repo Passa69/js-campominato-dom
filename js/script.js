@@ -75,6 +75,21 @@ for (let i = 1; i <= levels; i++) {
             }
             alert("hai perso!");
         }
+
+        // ...
+        // metodo più complicato per l'aggiunta della classe per le bombe:
+        // if (bomba.indexOf(i) == -1) {
+        //     square.addEventListener ('click', function() {
+        //         console.log('hai cliccato!', this)
+        //         square.classList.add("selection");
+        //     });
+        // } else {
+        //     square.addEventListener ('click', function() {
+        //         console.log('hai cliccato!', this)
+        //         square.classList.add("boom");
+        //     });
+        // }
+        // ...
     });
     
 }
