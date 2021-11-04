@@ -25,6 +25,9 @@ let levels;
 let bomba = [];
 console.log(bomba);
 
+// punti
+let points = 0;
+
 
 if (userChoice == 1) {
     levels = 100;
@@ -66,6 +69,7 @@ for (let i = 1; i <= levels; i++) {
     // aggiunta click
     square.addEventListener ('click', function() {
         square.classList.add("selection");
+        ++points;
 
         // mostro tutte le bombe
         if (bomba.includes(i)) {
@@ -73,7 +77,7 @@ for (let i = 1; i <= levels; i++) {
             for (let j = 0; j < bombs.length; j++){
                 bombs[j].classList.add("boom");
             }
-            alert("hai perso!");
+            alert("hai perso! hai totalizzato questi punti: ", points);
         }
 
         // ...
