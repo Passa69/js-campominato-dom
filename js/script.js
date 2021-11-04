@@ -70,6 +70,7 @@ for (let i = 1; i <= levels; i++) {
     square.addEventListener ('click', function() {
         square.classList.add("selection");
         ++points;
+        console.log("punteggio momentaneo: ", points);
 
         // mostro tutte le bombe
         if (bomba.includes(i)) {
